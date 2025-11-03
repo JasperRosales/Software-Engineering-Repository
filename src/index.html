@@ -1,46 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Engineering </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software Engineering</title>
+  
+  <link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
 
-    <link href="./output.css" rel="stylesheet"></head>
+  <link href="/src/css/output.css" rel="stylesheet" />
+</head>
 
 <body>
-    <header>
-        <h1>GROUP1</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="/src/chapters/ChapterOne.html">Chapter One</a>
-            <a href="/src/chapters/ChapterTwo.html">Chapter Two</a>
-            <a href="/src/chapters/ChapterThree.html">Chapter Three</a>
-            <a href="/src/chapters/ChapterFour.html">Chapter Four</a>
-        </nav>
-    </header>
+  <header class="site-header animate__animated animate__fadeInDown">
+    <div class="header-inner">
+      <h1 class="brand">Group 1</h1>
 
-    <section class="introduction"> 
-            <h1>Learn Software Engineering Architechure and Techniques</h1>
-            <article>
-                <button onclick="window.location.href='/src/chapters/ChapterOne.html'">Get Started</button>
-                <button onclick="window.location.href='about.html'">About Us</button>
-            </article>
-            <p>"Think like an engineer. Build like an architect."</p>
-    </section>
-    
+      <input type="checkbox" id="menu-toggle" class="menu-toggle peer" />
+      <label for="menu-toggle" class="menu-btn">
+        <span class="menu-bar peer-checked:rotate-45 peer-checked:translate-y-2"></span>
+        <span class="menu-bar peer-checked:opacity-0"></span>
+        <span class="menu-bar peer-checked:-rotate-45 peer-checked:-translate-y-2"></span>
+      </label>
 
-    <footer>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="/src/chapters/ChapterOne.html">Chapter One</a>
-            <a href="/src/chapters/ChapterTwo.html">Chapter Two</a>
-            <a href="/src/chapters/ChapterThree.html">Chapter Three</a>
-            <a href="/src/chapters/ChapterFour.html">Chapter Four</a>
-        </nav>
-        <p>Copyright © 2025 Group1, BSIT3A</p>
-    </footer>
+      <nav class="nav-links">
+        <a href="index.html" class="hover:text-primary">Home</a>
+        <a href="/src/chapters/ChapterOne.html" class="hover:text-primary">Chapter 1</a>
+        <a href="/src/chapters/ChapterTwo.html" class="hover:text-primary">Chapter 2</a>
+        <a href="/src/chapters/ChapterThree.html" class="hover:text-primary">Chapter 3</a>
+        <a href="/src/chapters/ChapterFour.html" class="hover:text-primary">Chapter 4</a>
+      </nav>
 
+      <nav class="nav-mobile">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="/src/chapters/ChapterOne.html" class="nav-item">Chapter 1</a>
+        <a href="/src/chapters/ChapterTwo.html" class="nav-item">Chapter 2</a>
+        <a href="/src/chapters/ChapterThree.html" class="nav-item">Chapter 3</a>
+        <a href="/src/chapters/ChapterFour.html" class="nav-item">Chapter 4</a>
+      </nav>
+    </div>
+  </header>
 
+  <section class="intro-section animate__animated animate__fadeIn">
+    <h1 class="intro-title">
+      Learn Software Engineering<br class="hidden md:block" />
+      Architecture & Techniques
+    </h1>
+
+    <p class="intro-quote typing">
+      “Think like an engineer. Build like an architect.”
+    </p>
+
+    <div class="intro-buttons">
+      <a href="/src/chapters/ChapterOne.html" class="btn-primary">Get Started</a>
+      <a href="about.html" class="btn-outline">About Us</a>
+    </div>
+  </section>
+
+  <section class="chapters animate__animated animate__fadeInUp">
+    <div class="chapter-card">
+      <h2 class="chapter-title">Chapter 1</h2>
+      <p class="chapter-text">Introduction to software engineering concepts and the SDLC process.</p>
+      <a href="/src/chapters/ChapterOne.html" class="chapter-link">Read More →</a>
+    </div>
+
+    <div class="chapter-card">
+      <h2 class="chapter-title">Chapter 2</h2>
+      <p class="chapter-text">Exploring requirements, analysis, and software modeling practices.</p>
+      <a href="/src/chapters/ChapterTwo.html" class="chapter-link">Read More →</a>
+    </div>
+
+    <div class="chapter-card">
+      <h2 class="chapter-title">Chapter 3</h2>
+      <p class="chapter-text">Design patterns, architecture, and scalable software systems.</p>
+      <a href="/src/chapters/ChapterThree.html" class="chapter-link">Read More →</a>
+    </div>
+  </section>
+
+  <footer class="site-footer animate__animated animate__fadeInUp">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="index.html" class="hover:text-primary">Home</a>
+        <a href="/src/chapters/ChapterOne.html" class="hover:text-primary">Chapter 1</a>
+        <a href="/src/chapters/ChapterTwo.html" class="hover:text-primary">Chapter 2</a>
+        <a href="/src/chapters/ChapterThree.html" class="hover:text-primary">Chapter 3</a>
+        <a href="/src/chapters/ChapterFour.html" class="hover:text-primary">Chapter 4</a>
+      </nav>
+
+      <div class="footer-sep"></div>
+      <p class="footer-copy">© 2025 Group 1, BSIT 3A</p>
+    </div>
+  </footer>
 </body>
-
 </html>

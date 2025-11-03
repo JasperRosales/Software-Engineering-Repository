@@ -1,1 +1,138 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #fefae0;
+  --color-surface: #e9edc9;
+  --color-accent: #ccd5ae;
+  --color-hover: #faedcd;
+  --color-primary: #d4a373;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-[#3a2f1b] font-sans flex flex-col min-h-screen antialiased selection:bg-primary selection:text-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold text-[#3a2f1b];
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .site-header {
+    @apply bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-accent/30 shadow-sm;
+  }
+
+  .header-inner {
+    @apply max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 relative;
+  }
+
+  .brand {
+    @apply text-xl sm:text-2xl font-extrabold text-primary tracking-tight;
+  }
+
+  .menu-toggle { @apply hidden; }
+  .menu-btn { @apply sm:hidden flex flex-col gap-1.5 cursor-pointer z-50; }
+  .menu-bar { @apply block w-6 h-0.5 bg-[#3a2f1b] transition-all; }
+
+  .nav-links { @apply hidden sm:flex gap-4 md:gap-6 text-sm md:text-base font-medium; }
+  .nav-mobile { @apply absolute top-full left-0 w-full bg-surface/95 backdrop-blur-md border-t border-accent/30 hidden peer-checked:flex flex-col; }
+  .nav-item { @apply px-6 py-3 hover:bg-hover hover:text-primary transition-colors; }
+
+  .intro-section {
+    @apply flex flex-col items-center justify-center text-center grow px-4 sm:px-6 lg:px-8 py-16 space-y-4;
+  }
+
+  .intro-title {
+    @apply text-4xl md:text-[2.7rem] xl:text-6xl font-extrabold leading-tight text-[#3a2f1b];
+  }
+
+  .intro-quote {
+    @apply text-primary text-sm md:text-xl italic max-w-2xl mt-2;
+  }
+
+  .intro-buttons {
+    @apply flex flex-row flex-wrap justify-center gap-3 mt-4;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-[#c28b5f] transition-all shadow-md;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border border-primary text-primary rounded-full font-semibold hover:bg-hover transition-all;
+  }
+
+  .chapters {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .chapter-card {
+    @apply bg-surface rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow;
+  }
+
+  .chapter-title { @apply text-xl font-semibold mb-3; }
+  .chapter-text  { @apply text-[#6b5e45] mb-4; }
+  .chapter-link  { @apply text-primary font-medium hover:underline; }
+
+  .site-footer { @apply bg-surface border-t border-accent/40 py-6; }
+  .footer-inner { @apply max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 px-4 sm:px-6 lg:px-8 text-sm text-[#6b5e45]; }
+  .footer-nav   { @apply flex flex-col items-center gap-3 sm:flex-row sm:gap-6 text-center; }
+  .footer-sep   { @apply w-3/4 border-t border-accent/40 my-2 md:hidden; }
+  .footer-copy  { @apply text-center sm:text-right; }
+}
+
+/* === COMPONENT PLACEHOLDERS: CHAPTER NAMESPACES (EMPTY FOR DEV EXTENSION) ===
+   These are intentionally empty / minimally defined so other devs can safely
+   add styles under the respective namespace without risk of accidental styling
+   on the landing page. Do NOT add concrete style rules here unless they should
+   affect the chapter pages globally. Use these blocks as the starting point.
+*/
+
+@layer components.ch1 {
+  /* Chapter 1 placeholder
+     Example use by other devs:
+     .ch1-section { @apply ... }
+     .ch1-heading { @apply ... }
+  */
+}
+
+@layer components.ch2 {
+  /* Chapter 2 placeholder */
+}
+
+@layer components.ch3 {
+  /* Chapter 3 placeholder */
+}
+
+@layer components.ch4 {
+  /* Chapter 4 placeholder */
+}
+
+@layer utilities {
+  .typing {
+    @apply overflow-hidden whitespace-nowrap border-r-2;
+    border-color: var(--color-primary);
+    display: inline-block;
+    width: 0ch;
+    animation: typing 4s steps(38, end) infinite alternate,
+               blink 0.5s step-end infinite;
+  }
+
+  @keyframes typing {
+    0% { width: 0ch; }
+    50%, 55% { width: 38ch; }
+    100% { width: 0ch; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  .lift-hover { @apply transform transition-transform duration-200; }
+  .lift-hover:hover { transform: translateY(-4px); }
+}
