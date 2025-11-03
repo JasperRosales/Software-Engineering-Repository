@@ -86,6 +86,83 @@
   .footer-copy  { @apply text-center sm:text-right; }
 }
 
+@layer components.about {
+  .about-main {
+    @apply bg-bg min-h-screen flex flex-col items-center justify-center px-6 py-16;
+  }
+
+  .about-container {
+    @apply max-w-6xl w-full text-center;
+  }
+
+  .about-title {
+    @apply text-3xl md:text-5xl font-extrabold text-[#3a2f1b] mb-6;
+  }
+
+  .about-return {
+    @apply inline-block mb-10 text-primary font-semibold hover:underline transition-colors;
+  }
+
+  .card-container {
+    @apply grid gap-8 justify-items-center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card {
+    perspective: 1000px;
+    @apply w-full max-w-xs h-80 relative;
+  }
+
+  .card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    @apply relative w-full h-full hidden md:block; /* Hide flip on mobile */
+  }
+
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    backface-visibility: hidden;
+    @apply absolute w-full h-full rounded-2xl shadow-lg border border-accent/40 overflow-hidden;
+  }
+
+  .card-front {
+    @apply bg-surface;
+  }
+
+  .card-front img {
+    @apply w-full h-full object-cover;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    @apply hidden md:flex flex-col items-center justify-center text-center p-6;
+  }
+
+  .card-back h3,
+  .card-back p {
+    @apply md:block; 
+  }
+
+  .card-static {
+    @apply flex flex-col md:hidden w-full max-w-xs;
+  }
+
+  .card-static img {
+    @apply w-full h-80 object-cover rounded-2xl shadow-lg border border-accent/40;
+  }
+
+  .card-static h3,
+  .card-static p {
+    @apply hidden; 
+  }
+}
+
+
+
 /* === COMPONENT PLACEHOLDERS: CHAPTER NAMESPACES (EMPTY FOR DEV EXTENSION) ===
    These are intentionally empty / minimally defined so other devs can safely
    add styles under the respective namespace without risk of accidental styling
